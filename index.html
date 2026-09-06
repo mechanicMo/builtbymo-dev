@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Built by Mo - software studio, Pasadena California</title>
+<meta name="description" content="One person who builds the whole product: web apps, mobile apps, and the agent systems underneath. Agency-scale work without the agency. Forty-five free minutes and an honest answer about what your idea actually requires.">
+<link rel="canonical" href="https://builtbymo.dev/">
+<meta name="robots" content="index,follow">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://builtbymo.dev/">
+<meta property="og:site_name" content="Built by Mo">
+<meta property="og:title" content="You have the idea. The question is the route.">
+<meta property="og:description" content="One person who builds the whole product. Agency-scale work without the agency. Forty-five free minutes, and you keep the notes whether or not you hire me.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="You have the idea. The question is the route.">
+<meta name="twitter:description" content="One person who builds the whole product. Agency-scale work without the agency.">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"ProfessionalService",
+  "name":"Built by Mo",
+  "description":"Solo software studio building web apps, mobile apps and agent systems end to end.",
+  "url":"https://builtbymo.dev/",
+  "areaServed":"US",
+  "address":{"@type":"PostalAddress","addressLocality":"Pasadena","addressRegion":"CA","addressCountry":"US"},
+  "founder":{"@type":"Person","name":"Mo Ramchandani"},
+  "knowsAbout":["Web application development","Mobile application development","AI agent systems"]
+}
+</script>
+<style>
+  :root{
+    --paper:#F4F2ED;
+    --ink:#15140F;
+    --mid:#54503F;
+    --faint:#87816F;
+    --rule:#D5CFC0;
+    --sunk:#EAE6DB;
+    --signal:#C2411C;
+    --deep:#2E4A3F;
+  }
+  :root[data-theme="dark"]{
+    --paper:#12130F; --ink:#EDEAE0; --mid:#9C9686; --faint:#6E695B;
+    --rule:#2A2C24; --sunk:#181A15; --signal:#E0623A; --deep:#8FB3A3;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#12130F; --ink:#EDEAE0; --mid:#9C9686; --faint:#6E695B;
+      --rule:#2A2C24; --sunk:#181A15; --signal:#E0623A; --deep:#8FB3A3;
+    }
+  }
+
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:"Söhne","Suisse Int'l","Neue Haas Grotesk Text",Helvetica,sans-serif;
+    font-size:17px; line-height:1.55; letter-spacing:-0.006em;
+  }
+  .wrap{max-width:1180px;margin:0 auto;padding:0 40px}
+  @media(max-width:760px){.wrap{padding:0 22px}}
+
+  .mono{
+    font-family:"GT America Mono","Söhne Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size:11px; letter-spacing:.13em; text-transform:uppercase;
+  }
+
+  /* ---------- masthead ---------- */
+  .top{border-bottom:1px solid var(--rule)}
+  .top .wrap{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:600;letter-spacing:-0.02em;font-size:17px}
+  .brand i{width:11px;height:11px;background:var(--signal);display:block}
+  .nav{display:flex;gap:30px}
+  .nav a{color:var(--mid);text-decoration:none}
+  .nav a:hover{color:var(--ink)}
+  @media(max-width:700px){.nav{display:none}}
+
+  /* ---------- hero ---------- */
+  .hero{padding:104px 0 76px;border-bottom:1px solid var(--rule)}
+  .eyebrow{display:flex;align-items:center;gap:14px;color:var(--faint);margin-bottom:34px}
+  .eyebrow .bar{width:46px;height:2px;background:var(--signal)}
+  h1{
+    margin:0; font-size:clamp(46px,7.4vw,104px); line-height:.96;
+    letter-spacing:-0.043em; font-weight:680; max-width:15ch;
+  }
+  h1 .quiet{color:var(--faint)}
+  .lead{margin:38px 0 0;max-width:53ch;font-size:19px;color:var(--mid)}
+  .lead b{color:var(--ink);font-weight:600}
+  .cta{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-top:44px}
+  .btn{
+    display:inline-flex;align-items:center;gap:12px;background:var(--ink);color:var(--paper);
+    text-decoration:none;padding:16px 26px;font-weight:600;font-size:15px;letter-spacing:-0.01em;
+  }
+  .btn i{width:9px;height:9px;background:var(--signal);display:block}
+  .btn:hover{background:var(--signal);color:#fff}
+  .btn:hover i{background:#fff}
+  .cta .note{color:var(--faint);font-size:14px;max-width:25ch;line-height:1.4}
+
+  /* ---------- the route ---------- */
+  .route{padding:0 0 30px}
+  .stop{
+    display:grid;grid-template-columns:118px 34px 1fr;gap:0;
+    border-bottom:1px solid var(--rule);
+  }
+  .stop:last-child{border-bottom:0}
+  .stop .num{
+    padding:44px 0 52px;color:var(--faint);
+  }
+  /* the line + node column */
+  .stop .line{position:relative}
+  .stop .line::before{
+    content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;
+    background:var(--rule);transform:translateX(-50%);
+  }
+  .stop:first-child .line::before{top:56px}
+  .stop.end .line::before{bottom:auto;height:56px}
+  .stop .node{
+    position:absolute;left:50%;top:52px;width:15px;height:15px;
+    transform:translate(-50%,-50%);background:var(--paper);
+    border:2px solid var(--mid);border-radius:50%;
+  }
+  .stop.here .node{background:var(--signal);border-color:var(--signal);width:17px;height:17px}
+  .stop.end .node{background:var(--ink);border-color:var(--ink)}
+  .stop .content{padding:38px 0 54px 40px}
+  @media(max-width:760px){
+    .stop{grid-template-columns:22px 1fr}
+    .stop .num{display:none}
+    .stop .content{padding:32px 0 42px 22px}
+  }
+  .stop h2{
+    margin:9px 0 0;font-size:clamp(27px,3.5vw,40px);line-height:1.08;
+    letter-spacing:-0.032em;font-weight:660;max-width:19ch;
+  }
+  .stop p{margin:17px 0 0;max-width:60ch;color:var(--mid)}
+  .stop p b{color:var(--ink);font-weight:600}
+
+  /* the fixed marginalia - written once, never expires */
+  .aside{
+    margin-top:26px;padding-left:19px;border-left:2px solid var(--signal);
+    max-width:47ch;
+  }
+  .aside .mono{color:var(--signal);display:block;margin-bottom:7px}
+  .aside p{margin:0;color:var(--mid);font-size:15.5px;line-height:1.5}
+
+  /* ---------- proof band ---------- */
+  .band{background:var(--sunk);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+  .band .wrap{padding:76px 40px}
+  .band .mono{color:var(--faint)}
+  .band h2{
+    margin:22px 0 0;font-size:clamp(30px,4.2vw,50px);line-height:1.04;
+    letter-spacing:-0.035em;font-weight:660;max-width:20ch;
+  }
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:34px}
+  @media(max-width:820px){.cols{grid-template-columns:1fr;gap:26px}}
+  .cols p{margin:0 0 15px;color:var(--mid);max-width:52ch}
+  .cols em{font-style:normal;color:var(--ink);font-weight:600}
+  .marks{display:flex;gap:56px;margin-top:44px;flex-wrap:wrap}
+  .mark .v{font-size:33px;font-weight:660;letter-spacing:-0.03em;display:block;line-height:1}
+  .mark .w{color:var(--faint);margin-top:8px;display:block}
+
+  /* ---------- straight answers ---------- */
+  .qa{padding:82px 0 0}
+  .qa .mono{color:var(--faint)}
+  .q{border-top:1px solid var(--rule);padding:32px 0;display:grid;
+     grid-template-columns:152px 1fr;gap:36px}
+  @media(max-width:760px){.q{grid-template-columns:1fr;gap:12px}}
+  .q .lab{color:var(--signal)}
+  .q h3{margin:0 0 12px;font-size:21px;letter-spacing:-0.022em;font-weight:640}
+  .q p{margin:0;color:var(--mid);max-width:62ch}
+
+  /* ---------- close ---------- */
+  .close{padding:92px 0 100px;border-top:1px solid var(--rule);margin-top:78px}
+  .close h2{margin:0;font-size:clamp(34px,5.4vw,64px);line-height:1;
+            letter-spacing:-0.04em;font-weight:680;max-width:16ch}
+  .close p{color:var(--mid);margin:22px 0 0;max-width:46ch}
+  .foot{border-top:1px solid var(--rule);padding:26px 0 60px;display:flex;
+        justify-content:space-between;gap:20px;flex-wrap:wrap;color:var(--faint)}
+  .foot a{color:var(--faint);text-decoration:none}
+  .foot a:hover{color:var(--ink)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand"><i></i>Built by Mo</div>
+    <nav class="nav mono">
+      <a href="#route">The route</a>
+      <a href="#build">A build</a>
+      <a href="#answers">Straight answers</a>
+      <a href="#book">Book</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow mono"><span class="bar"></span>Idea to live · the whole path</div>
+    <h1>You have the idea. <span class="quiet">The question is the route.</span></h1>
+    <p class="lead">
+      You already know what the tools can do, so capability isn't what you're shopping for.
+      <b>You're deciding who to trust with the decisions.</b> Here's the whole path, start to
+      finish, before you commit to any of it.
+    </p>
+    <div class="cta">
+      <a class="btn" href="#book"><i></i>Book forty-five minutes</a>
+      <span class="note">Free, and you keep the notes whether or not you hire me.</span>
+    </div>
+  </div>
+</section>
+
+<section class="route wrap" id="route">
+
+  <div class="stop here">
+    <div class="num mono">Stop 01</div>
+    <div class="line"><span class="node"></span></div>
+    <div class="content">
+      <div class="mono" style="color:var(--signal)">Where you are</div>
+      <h2>Six directions, all defensible, no way to choose.</h2>
+      <p>
+        Most people who call me aren't stuck on how. They're holding a handful of plausible next
+        moves and no reliable way to know which one deserves the next six months.
+        <b>That's not a coding problem, and no tool solves it for you.</b>
+      </p>
+      <div class="aside">
+        <span class="mono">From the bench</span>
+        <p>Told a founder his idea didn't need an app yet. He's running it on a spreadsheet and it's working.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="stop">
+    <div class="num mono">Stop 02</div>
+    <div class="line"><span class="node"></span></div>
+    <div class="content">
+      <div class="mono" style="color:var(--faint)">The first forty-five minutes</div>
+      <h2>An honest read, before either of us commits.</h2>
+      <p>
+        We talk it through and I tell you what your idea actually requires. Sometimes that's me.
+        Sometimes it's a team of four, or a tool that already exists, or nothing at all yet.
+        <b>You'll get the truth even when it costs me the work.</b>
+      </p>
+      <div class="aside">
+        <span class="mono">From the bench</span>
+        <p>I've talked people out of hiring me. It's usually the fastest way to find out whether we should be working together.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="stop">
+    <div class="num mono">Stop 03</div>
+    <div class="line"><span class="node"></span></div>
+    <div class="content">
+      <div class="mono" style="color:var(--faint)">If we go</div>
+      <h2>One person holding the whole product.</h2>
+      <p>
+        Interface, application, data, and the agent systems running underneath. Trust and safety
+        handled properly, because accounts and payments and other people's data never demo well
+        and routinely end companies. <b>Milestones agreed up front, so you're never exposed for
+        more than one at a time.</b>
+      </p>
+      <div class="aside">
+        <span class="mono">From the bench</span>
+        <p>Rebuilt a pipeline that had been quietly failing at 3am for a month. Nobody had noticed.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="stop">
+    <div class="num mono">Stop 04</div>
+    <div class="line"><span class="node"></span></div>
+    <div class="content">
+      <div class="mono" style="color:var(--faint)">Launch, and after</div>
+      <h2>Going live is where the interesting problems start.</h2>
+      <p>
+        Launch day isn't the finish line, it's the point at which real people start doing things
+        you didn't predict. <b>I'm there for that part too</b>, which is the part most engagements
+        quietly leave out.
+      </p>
+    </div>
+  </div>
+
+  <div class="stop end">
+    <div class="num mono">Stop 05</div>
+    <div class="line"><span class="node"></span></div>
+    <div class="content">
+      <div class="mono" style="color:var(--faint)">Where it ends</div>
+      <h2>Yours entirely, and easy to leave.</h2>
+      <p>
+        Every account, domain and repository in your name from week one, on your card. Documented
+        as we go and tested, handed off clean enough that another developer could pick it up in an
+        afternoon. <b>Making myself easy to leave is the point, not a concession.</b>
+      </p>
+      <div class="aside">
+        <span class="mono">From the bench</span>
+        <p>Turned down a project that needed a team of four. Made the introduction instead.</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section class="band" id="build">
+  <div class="wrap">
+    <div class="mono">One build</div>
+    <h2>She had already built half of it herself.</h2>
+    <div class="cols">
+      <div>
+        <p>
+          She taught herself enough to get a first version working on nights and weekends, and it
+          worked. People were using it. <em>She did not need rescuing.</em>
+        </p>
+        <p>
+          What she'd run out of was certainty, not ability. She hired me to be the person who says
+          <em>that one, and here's why the rest can wait</em>, and then to build it properly so it
+          wouldn't need rebuilding in a year.
+        </p>
+      </div>
+      <div>
+        <p>
+          A few months later it was live with real users on it. She still ships to it herself,
+          because it was hers the whole time.
+        </p>
+        <p>
+          Agency-scale work, several connected apps and the systems under them, without the
+          agency, and without a project manager between her and the person building it.
+        </p>
+      </div>
+    </div>
+    <div class="marks">
+      <div class="mark"><span class="v">One</span><span class="w mono">person, whole product</span></div>
+      <div class="mark"><span class="v">Hers</span><span class="w mono">from day one</span></div>
+      <div class="mark"><span class="v">Zero</span><span class="w mono">rebuilds since</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="qa wrap" id="answers">
+  <div class="mono">Straight answers</div>
+  <div style="height:26px"></div>
+
+  <div class="q">
+    <div class="lab mono">Q / 01</div>
+    <div>
+      <h3>Why hire you when I could just use AI myself?</h3>
+      <p>
+        Go for it. You might get further than you expect. I'm not the person you need, I'm the
+        person you choose, the way you hand off the laundry knowing perfectly well how a washing
+        machine works. Call me at the wall, where the question stops being how and becomes which.
+      </p>
+    </div>
+  </div>
+
+  <div class="q">
+    <div class="lab mono">Q / 02</div>
+    <div>
+      <h3>What happens to my product if you disappear?</h3>
+      <p>
+        You own everything from day one and I set it up that way deliberately. Documented, tested,
+        and handed off clean enough that anyone competent could continue it.
+      </p>
+    </div>
+  </div>
+
+  <div class="q">
+    <div class="lab mono">Q / 03</div>
+    <div>
+      <h3>How fast, and what does it cost?</h3>
+      <p>
+        Faster than an agency and for a fraction of what one quotes, because there's no layer
+        between you and the person building it. Real numbers come after the call, once I know what
+        your idea actually requires. Quoting before that is guessing.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="close wrap" id="book">
+  <h2>Start at the first stop.</h2>
+  <p>
+    Forty-five minutes, free, no commitment. Bring the idea; leave with a straight answer,
+    including "you don't need me," if that's the truth.
+  </p>
+  <div class="cta">
+    <a class="btn" href="#"><i></i>Book the call</a>
+    <span class="note">No deck, no follow-up sequence, no invented deadline.</span>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="foot mono">
+    <span>Built by Mo · Pasadena, California</span>
+    <a href="#">the portfolio →</a>
+  </div>
+</div>
+</body>
+</html>
