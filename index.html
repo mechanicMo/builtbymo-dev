@@ -92,10 +92,10 @@
   .eyebrow .bar{width:46px;height:2px;background:var(--signal)}
   h1{
     margin:0; font-size:clamp(46px,7.4vw,104px); line-height:.96;
-    letter-spacing:-0.043em; font-weight:680; max-width:15ch;
+    letter-spacing:-0.043em; font-weight:680; max-width:22ch;
   }
   h1 .quiet{color:var(--faint)}
-  .lead{margin:26px 0 0;max-width:53ch;font-size:19px;color:var(--mid)}
+  .lead{margin:26px 0 0;max-width:62ch;font-size:19px;color:var(--mid)}
   .lead b{color:var(--ink);font-weight:600}
   .cta{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-top:30px}
   .btn{
@@ -105,7 +105,7 @@
   .btn i{width:9px;height:9px;background:var(--signal);display:block}
   .btn:hover{background:var(--signal);color:#fff}
   .btn:hover i{background:#fff}
-  .cta .note{color:var(--faint);font-size:14px;max-width:25ch;line-height:1.4}
+  .cta .note{color:var(--faint);font-size:14px;max-width:34ch;line-height:1.4}
 
   /* ---------- the route ---------- */
   .route{padding:0 0 14px}
@@ -132,7 +132,7 @@
   }
   .stop.here .node{background:var(--signal);border-color:var(--signal);width:17px;height:17px}
   .stop.end .node{background:var(--ink);border-color:var(--ink)}
-  .stop .content{padding:22px 0 30px 40px}
+  .stop .content{padding:22px 0 30px 40px;overflow:hidden}
   @media(max-width:760px){
     .stop{grid-template-columns:22px 1fr}
     .stop .num{display:none}
@@ -140,15 +140,15 @@
   }
   .stop h2{
     margin:9px 0 0;font-size:clamp(27px,3.5vw,40px);line-height:1.08;
-    letter-spacing:-0.032em;font-weight:660;max-width:19ch;
+    letter-spacing:-0.032em;font-weight:660;max-width:30ch;
   }
-  .stop p{margin:17px 0 0;max-width:60ch;color:var(--mid)}
+  .stop p{margin:17px 0 0;max-width:64ch;color:var(--mid)}
   .stop p b{color:var(--ink);font-weight:600}
 
   /* the fixed marginalia - written once, never expires */
   .aside{
     margin-top:18px;padding-left:19px;border-left:2px solid var(--signal);
-    max-width:47ch;
+    max-width:62ch;
   }
   .aside .mono{color:var(--signal);display:block;margin-bottom:7px}
   .aside p{margin:0;color:var(--mid);font-size:15.5px;line-height:1.5}
@@ -159,11 +159,11 @@
   .band .mono{color:var(--faint)}
   .band h2{
     margin:22px 0 0;font-size:clamp(30px,4.2vw,50px);line-height:1.04;
-    letter-spacing:-0.035em;font-weight:660;max-width:20ch;
+    letter-spacing:-0.035em;font-weight:660;max-width:28ch;
   }
   .cols{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:34px}
   @media(max-width:820px){.cols{grid-template-columns:1fr;gap:26px}}
-  .cols p{margin:0 0 15px;color:var(--mid);max-width:52ch}
+  .cols p{margin:0 0 15px;color:var(--mid);max-width:64ch}
   .cols em{font-style:normal;color:var(--ink);font-weight:600}
   /* ---------- prior builds ---------- */
   .workhead{display:flex;align-items:baseline;justify-content:space-between;gap:26px;flex-wrap:wrap}
@@ -181,9 +181,9 @@
   @media(max-width:900px){.work-grid{grid-template-columns:1fr;gap:32px}}
   .work-story h2{
     margin:0 0 20px;font-size:clamp(28px,3.9vw,46px);line-height:1.04;
-    letter-spacing:-0.035em;font-weight:660;max-width:18ch;
+    letter-spacing:-0.035em;font-weight:660;max-width:26ch;
   }
-  .work-story p{margin:0 0 15px;color:var(--mid);max-width:52ch}
+  .work-story p{margin:0 0 15px;color:var(--mid);max-width:64ch}
   .work-story em{font-style:normal;color:var(--ink);font-weight:600}
   .work-shot{margin:0}
   .work-shot img{
@@ -191,12 +191,15 @@
     border:1px solid var(--rule);background:var(--paper);
   }
   /* the phone shot is tall portrait; cap it so it sits beside the story */
-  #work-sk .work-shot{display:flex;justify-content:center}
-  #work-sk .work-shot img{width:auto;max-height:560px;border:0}
-  #work-sk .work-grid{grid-template-columns:1fr .85fr}
+  #work-sk .work-shot{display:flex;flex-direction:column;align-items:center}
+  #work-sk .work-shot img{width:auto;max-height:520px;border:1px solid var(--rule)}
+  #work-sk .work-grid{grid-template-columns:1fr .78fr}
   @media(max-width:900px){#work-sk .work-grid{grid-template-columns:1fr}}
-  .work-shot figcaption{color:var(--faint);margin-top:11px;line-height:1.7}
-  .work-shot .samp{color:var(--mid);text-transform:none;letter-spacing:0;font-size:12.5px}
+  .work-shot figcaption{color:var(--faint);margin-top:10px;line-height:1.5;max-width:60ch}
+  .work-shot .samp{
+    display:block;margin-top:4px;color:var(--faint);
+    text-transform:none;letter-spacing:0;font-size:12px;opacity:.85;
+  }
 
   .hats{margin-top:28px;padding-top:22px;border-top:1px solid var(--rule)}
   .hats-lead{color:var(--signal);margin-bottom:16px}
@@ -218,36 +221,32 @@
   @media(max-width:760px){.q{grid-template-columns:1fr;gap:12px}}
   .q .lab{color:var(--signal)}
   .q h3{margin:0 0 12px;font-size:21px;letter-spacing:-0.022em;font-weight:640}
-  .q p{margin:0;color:var(--mid);max-width:62ch}
+  .q p{margin:0;color:var(--mid);max-width:64ch}
 
   /* headshot at the honest-read stop */
-  /* headshot sits to the RIGHT of the copy, outside it, so it can breathe */
-  .me{display:grid;grid-template-columns:1fr 210px;gap:38px;align-items:start;margin-top:17px}
+  /* headshot sits to the RIGHT of the copy, outside it. Floated, not grid:
+     a grid row was sized by the 250px photo and left dead space under short copy. */
+  .me{display:block;margin-top:17px}
   .me img{
-    width:210px;height:250px;object-fit:cover;
+    width:200px;height:238px;object-fit:cover;
     border:1px solid var(--rule);display:block;
+    float:right;margin:0 0 14px 34px;
   }
-  .me p{margin:0;max-width:52ch;color:var(--mid)}
+  .me p{margin:0;max-width:64ch;color:var(--mid)}
   .me p b{color:var(--ink);font-weight:600}
-  .me-sig{color:var(--faint);margin-top:12px !important}
-  @media(max-width:900px){
-    .me{grid-template-columns:1fr 150px;gap:24px}
-    .me img{width:150px;height:180px}
-  }
-  @media(max-width:620px){
-    .me{grid-template-columns:1fr;gap:18px}
-    .me img{width:130px;height:155px}
-  }
+  .me-sig{color:var(--faint);margin-top:12px !important;max-width:none;white-space:nowrap}
+  @media(max-width:900px){ .me img{width:150px;height:180px;margin-left:24px} }
+  @media(max-width:620px){ .me img{width:120px;height:143px;margin-left:18px} }
 
-  .orelse{margin:26px 0 0;color:var(--mid);max-width:52ch}
+  .orelse{margin:26px 0 0;color:var(--mid);max-width:64ch}
   .orelse a{color:var(--signal);text-decoration:none;border-bottom:1px solid var(--rule)}
   .orelse a:hover{border-bottom-color:var(--signal)}
 
   /* ---------- close ---------- */
   .close{padding:50px 0 56px;border-top:1px solid var(--rule);margin-top:42px}
   .close h2{margin:0;font-size:clamp(34px,5.4vw,64px);line-height:1;
-            letter-spacing:-0.04em;font-weight:680;max-width:16ch}
-  .close p{color:var(--mid);margin:22px 0 0;max-width:46ch}
+            letter-spacing:-0.04em;font-weight:680;max-width:24ch}
+  .close p{color:var(--mid);margin:22px 0 0;max-width:58ch}
   .foot{border-top:1px solid var(--rule);padding:20px 0 34px;display:flex;
         justify-content:space-between;gap:20px;flex-wrap:wrap;color:var(--faint)}
   .foot a{color:var(--faint);text-decoration:none}
@@ -411,18 +410,15 @@
         <div class="work-story">
           <h2>She had built the whole thing, on screen.</h2>
           <p>
-            She had designed every screen herself, hundreds of them, on nights and weekends, and
-            they looked good. <em>None of it was connected to anything.</em> No database, no
-            accounts, nothing that was still there when you closed the tab.
+            Hundreds of screens, designed herself, on nights and weekends.
+            <em>None of it was connected to anything.</em>
           </p>
           <p>
-            Which meant she knew exactly what she wanted, and that is rarer than it sounds. What
-            she needed was someone to say which parts to build first, and then to build the thing
-            underneath the screens.
+            So she knew exactly what she wanted. She needed someone to build what goes underneath.
           </p>
           <p>
-            A few months later real agencies were running on it, on the web and on a phone app
-            their staff use in people's homes. She still makes changes to it herself.
+            Now real agencies run on it, on the web and on a phone app their staff use in people's
+            homes. She still makes changes herself.
           </p>
         </div>
         <figure class="work-shot">
@@ -434,9 +430,9 @@
         <div class="hats-lead mono">One person wore all of these</div>
         <ul class="hatlist">
           <li>Product</li><li>Design</li><li>Frontend</li><li>Backend</li><li>Database</li>
-          <li>DevOps</li><li>Release engineering</li><li>Security</li><li>Compliance</li>
+          <li>DevOps</li><li>Security</li><li>Compliance</li>
           <li>QA</li><li>Analytics</li><li>Data migration</li><li>AI systems</li>
-          <li>Client communication</li>
+          <li>Vendor communication</li>
         </ul>
         <p class="hats-note">
           HIPAA-configured throughout, with signed business associate agreements, row-level data
@@ -452,19 +448,16 @@
         <div class="work-story">
           <h2>He had the audience already. No app.</h2>
           <p>
-            A coach with a following and a clear picture of the app he wanted. He knew the sport
-            and he knew his people. <em>What he did not have was the app, or a way to charge for
-            it.</em>
+            A coach who knew his sport and knew his people.
+            <em>No app, and no way to charge for one.</em>
           </p>
           <p>
-            I built it and got it through review on both stores. The app, the subscriptions and
-            free trials behind it, and the ad tracking that tells him which campaigns are worth
-            the money and which ones are not.
+            I built it and got it through review on both stores, with the subscriptions and the ad
+            tracking behind it.
           </p>
           <p>
-            Google's testing rules stranded the Android release partway through, and the fix was
-            moving it to a different publisher account and starting that queue over. Nobody quotes
-            for that week. It still has to happen.
+            Google's testing rules stranded the Android release halfway. Nobody quotes for that
+            week. It still has to happen.
           </p>
         </div>
         <figure class="work-shot">
@@ -476,8 +469,8 @@
         <div class="hats-lead mono">Every hat but the brand</div>
         <ul class="hatlist">
           <li>Product</li><li>Frontend</li><li>Backend</li><li>Database</li><li>DevOps</li>
-          <li>Release engineering</li><li>Security</li><li>QA</li><li>Payments</li>
-          <li>Ads and attribution</li><li>Analytics</li><li>Client communication</li>
+          <li>Security</li><li>QA</li><li>Payments</li>
+          <li>Ads and attribution</li><li>Analytics</li><li>Vendor communication</li>
         </ul>
         <p class="hats-note">
           Subscriptions and free trials wired end to end, including the paywall and trial-abuse
