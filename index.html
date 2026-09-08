@@ -195,7 +195,8 @@
   }
   /* the phone shot is tall portrait; cap it so it sits beside the story */
   #work-sk .work-shot{display:flex;flex-direction:column;align-items:center}
-  #work-sk .work-shot img{width:auto;max-height:400px;border:0}
+  /* transparent PNG: no painted backdrop, so it sits on the band colour */
+  #work-sk .work-shot img{width:auto;max-height:400px;border:0;background:none}
   #work-sk .work-grid{grid-template-columns:1fr .78fr}
   @media(max-width:900px){#work-sk .work-grid{grid-template-columns:1fr}}
   .work-shot figcaption{color:var(--mid);margin-top:11px;line-height:1.55;max-width:62ch}
