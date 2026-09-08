@@ -231,20 +231,28 @@
      a grid row was sized by the 250px photo and left dead space under short copy. */
   /* photo and copy sit side by side and share a height, so neither hangs
      past the other and no dead space opens up underneath */
-  /* photo tracks the height of the copy beside it: align-items:start so the
-     text column is not stretched, and the photo is capped to that content */
-  .me{display:flex;gap:30px;align-items:flex-start;margin-top:17px}
-  .me > div{flex:1 1 auto;min-width:0}
-  .me img{
-    flex:0 0 148px;width:148px;height:132px;
-    object-fit:cover;object-position:center 16%;
+  /* Stop 02 runs as two columns: all copy on the left, the photo in its own
+     column on the right, centred and filling that space. */
+  .withme{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:44px;align-items:stretch}
+  .withme-copy{min-width:0}
+  .withme-copy h2{margin-top:9px}
+  .withme-photo{
+    margin:0;display:flex;align-items:center;justify-content:center;
+  }
+  .withme-photo img{
+    width:100%;max-width:300px;height:auto;
+    object-fit:cover;
     border:1px solid var(--rule);display:block;
   }
-  .me p{margin:0;max-width:64ch;color:var(--mid)}
-  .me p b{color:var(--ink);font-weight:600}
-  .me-sig{color:var(--faint);margin-top:12px !important;max-width:none;white-space:nowrap}
-  @media(max-width:900px){ .me{gap:22px} .me img{flex:0 0 124px;width:124px} }
-  @media(max-width:620px){ .me{gap:16px} .me img{flex:0 0 96px;width:96px} }
+  .me-sig{color:var(--faint);margin-top:12px;max-width:none;white-space:nowrap}
+  .withme-copy p{margin:17px 0 0;max-width:64ch;color:var(--mid)}
+  .withme-copy p b{color:var(--ink);font-weight:600}
+  @media(max-width:900px){
+    .withme{grid-template-columns:1fr;gap:22px}
+    .withme-photo{justify-content:flex-start}
+    .withme-photo img{width:190px;height:226px}
+    .me-sig{white-space:normal}
+  }
 
   .orelse{margin:26px 0 0;color:var(--mid);max-width:64ch}
   .orelse a{color:var(--signal);text-decoration:none;border-bottom:1px solid var(--rule)}
@@ -330,22 +338,24 @@
     <div class="num mono">Stop 02</div>
     <div class="line"><span class="node"></span></div>
     <div class="content">
-      <div class="mono" style="color:var(--faint)">The first forty-five minutes</div>
-      <h2>An honest read, before either of us commits.</h2>
-      <div class="me">
-        <div>
+      <div class="withme">
+        <div class="withme-copy">
+          <div class="mono" style="color:var(--faint)">The first forty-five minutes</div>
+          <h2>An honest read, before either of us commits.</h2>
           <p>
             We talk it through and I tell you what I think your idea actually needs. Sometimes
             that is me. Sometimes it is a team of four, or software that already exists, or waiting
             six months. <b>I will tell you that even when it costs me the job.</b>
           </p>
           <p class="me-sig mono">Mo Ramchandani, the person you would be talking to</p>
+          <div class="aside">
+            <span class="mono">Something that happened</span>
+            <p>One founder came in sure she needed a rewrite. She did not, and the call saved her about four months.</p>
+          </div>
         </div>
-        <img src="/mo.jpg" srcset="/mo.jpg 1x, /mo-2x.jpg 2x" alt="Mo Ramchandani" width="210" height="250" loading="lazy">
-      </div>
-      <div class="aside">
-        <span class="mono">Something that happened</span>
-        <p>One founder came in sure she needed a rewrite. She did not, and the call saved her about four months.</p>
+        <figure class="withme-photo">
+          <img src="/mo.jpg" srcset="/mo.jpg 1x, /mo-2x.jpg 2x" alt="Mo Ramchandani" width="420" height="500" loading="lazy">
+        </figure>
       </div>
     </div>
   </div>
