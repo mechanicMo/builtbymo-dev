@@ -226,17 +226,22 @@
   /* headshot at the honest-read stop */
   /* headshot sits to the RIGHT of the copy, outside it. Floated, not grid:
      a grid row was sized by the 250px photo and left dead space under short copy. */
-  .me{display:block;margin-top:17px}
+  /* photo and copy sit side by side and share a height, so neither hangs
+     past the other and no dead space opens up underneath */
+  /* photo tracks the height of the copy beside it: align-items:start so the
+     text column is not stretched, and the photo is capped to that content */
+  .me{display:flex;gap:30px;align-items:flex-start;margin-top:17px}
+  .me > div{flex:1 1 auto;min-width:0}
   .me img{
-    width:158px;height:188px;object-fit:cover;
+    flex:0 0 148px;width:148px;height:132px;
+    object-fit:cover;object-position:center 16%;
     border:1px solid var(--rule);display:block;
-    float:right;margin:2px 0 10px 30px;
   }
   .me p{margin:0;max-width:64ch;color:var(--mid)}
   .me p b{color:var(--ink);font-weight:600}
   .me-sig{color:var(--faint);margin-top:12px !important;max-width:none;white-space:nowrap}
-  @media(max-width:900px){ .me img{width:132px;height:157px;margin-left:24px} }
-  @media(max-width:620px){ .me img{width:120px;height:143px;margin-left:18px} }
+  @media(max-width:900px){ .me{gap:22px} .me img{flex:0 0 124px;width:124px} }
+  @media(max-width:620px){ .me{gap:16px} .me img{flex:0 0 96px;width:96px} }
 
   .orelse{margin:26px 0 0;color:var(--mid);max-width:64ch}
   .orelse a{color:var(--signal);text-decoration:none;border-bottom:1px solid var(--rule)}
@@ -285,7 +290,7 @@
 <section class="hero">
   <div class="wrap">
     <div class="eyebrow mono"><span class="bar"></span>Idea to live · the whole path</div>
-    <h1>You have the idea. <span class="quiet">The question is the route.</span></h1>
+    <h1>You have the idea.<br><span class="quiet">The question is the route.</span></h1>
     <p class="lead">
       You already know what the tools can do, so capability isn't what you're shopping for.
       <b>You're deciding who to trust with the decisions.</b> Here's the whole path, start to
@@ -313,7 +318,7 @@
       </p>
       <div class="aside">
         <span class="mono">Something that happened</span>
-        <p>Told a founder his idea didn't need an app yet. He's running it on a spreadsheet and it's working.</p>
+        <p>Someone came in wanting a rebuild. The actual problem was two slow queries, so that is what we fixed.</p>
       </div>
     </div>
   </div>
@@ -337,7 +342,7 @@
       </div>
       <div class="aside">
         <span class="mono">Something that happened</span>
-        <p>I've talked people out of hiring me. It's usually the fastest way to find out whether we should be working together.</p>
+        <p>One founder came in sure she needed a rewrite. She did not, and the call saved her about four months.</p>
       </div>
     </div>
   </div>
@@ -356,7 +361,7 @@
       </p>
       <div class="aside">
         <span class="mono">Something that happened</span>
-        <p>Rebuilt a pipeline that had been quietly failing at 3am for a month. Nobody had noticed.</p>
+        <p>Found a job that had been failing silently at 3am for a month. No alert, no error, nobody had noticed.</p>
       </div>
     </div>
   </div>
@@ -388,7 +393,7 @@
       </p>
       <div class="aside">
         <span class="mono">Something that happened</span>
-        <p>Turned down a project that needed a team of four. Made the introduction instead.</p>
+        <p>Handed over a finished build on a Friday. The client shipped their own first change that weekend.</p>
       </div>
     </div>
   </div>
