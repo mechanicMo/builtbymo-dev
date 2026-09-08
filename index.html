@@ -87,17 +87,17 @@
   :root[data-theme="dark"] .theme .moon{display:none}
 
   /* ---------- hero ---------- */
-  .hero{padding:104px 0 76px;border-bottom:1px solid var(--rule)}
-  .eyebrow{display:flex;align-items:center;gap:14px;color:var(--faint);margin-bottom:34px}
+  .hero{padding:54px 0 44px;border-bottom:1px solid var(--rule)}
+  .eyebrow{display:flex;align-items:center;gap:14px;color:var(--faint);margin-bottom:22px}
   .eyebrow .bar{width:46px;height:2px;background:var(--signal)}
   h1{
     margin:0; font-size:clamp(46px,7.4vw,104px); line-height:.96;
     letter-spacing:-0.043em; font-weight:680; max-width:15ch;
   }
   h1 .quiet{color:var(--faint)}
-  .lead{margin:38px 0 0;max-width:53ch;font-size:19px;color:var(--mid)}
+  .lead{margin:26px 0 0;max-width:53ch;font-size:19px;color:var(--mid)}
   .lead b{color:var(--ink);font-weight:600}
-  .cta{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-top:44px}
+  .cta{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-top:30px}
   .btn{
     display:inline-flex;align-items:center;gap:12px;background:var(--ink);color:var(--paper);
     text-decoration:none;padding:16px 26px;font-weight:600;font-size:15px;letter-spacing:-0.01em;
@@ -108,14 +108,14 @@
   .cta .note{color:var(--faint);font-size:14px;max-width:25ch;line-height:1.4}
 
   /* ---------- the route ---------- */
-  .route{padding:0 0 30px}
+  .route{padding:0 0 14px}
   .stop{
     display:grid;grid-template-columns:118px 34px 1fr;gap:0;
     border-bottom:1px solid var(--rule);
   }
   .stop:last-child{border-bottom:0}
   .stop .num{
-    padding:44px 0 52px;color:var(--faint);
+    padding:26px 0 30px;color:var(--faint);
   }
   /* the line + node column */
   .stop .line{position:relative}
@@ -132,7 +132,7 @@
   }
   .stop.here .node{background:var(--signal);border-color:var(--signal);width:17px;height:17px}
   .stop.end .node{background:var(--ink);border-color:var(--ink)}
-  .stop .content{padding:38px 0 54px 40px}
+  .stop .content{padding:22px 0 30px 40px}
   @media(max-width:760px){
     .stop{grid-template-columns:22px 1fr}
     .stop .num{display:none}
@@ -147,7 +147,7 @@
 
   /* the fixed marginalia - written once, never expires */
   .aside{
-    margin-top:26px;padding-left:19px;border-left:2px solid var(--signal);
+    margin-top:18px;padding-left:19px;border-left:2px solid var(--signal);
     max-width:47ch;
   }
   .aside .mono{color:var(--signal);display:block;margin-bottom:7px}
@@ -155,7 +155,7 @@
 
   /* ---------- proof band ---------- */
   .band{background:var(--sunk);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
-  .band .wrap{padding:76px 40px}
+  .band .wrap{padding:44px 40px}
   .band .mono{color:var(--faint)}
   .band h2{
     margin:22px 0 0;font-size:clamp(30px,4.2vw,50px);line-height:1.04;
@@ -177,7 +177,7 @@
   .tab:hover{color:var(--ink);border-color:var(--mid)}
   .tab.is-on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
   .work[hidden]{display:none}
-  .work-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:start;margin-top:30px}
+  .work-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:44px;align-items:center;margin-top:22px}
   @media(max-width:900px){.work-grid{grid-template-columns:1fr;gap:32px}}
   .work-story h2{
     margin:0 0 20px;font-size:clamp(28px,3.9vw,46px);line-height:1.04;
@@ -190,10 +190,15 @@
     width:100%;height:auto;display:block;
     border:1px solid var(--rule);background:var(--paper);
   }
+  /* the phone shot is tall portrait; cap it so it sits beside the story */
+  #work-sk .work-shot{display:flex;justify-content:center}
+  #work-sk .work-shot img{width:auto;max-height:560px;border:0}
+  #work-sk .work-grid{grid-template-columns:1fr .85fr}
+  @media(max-width:900px){#work-sk .work-grid{grid-template-columns:1fr}}
   .work-shot figcaption{color:var(--faint);margin-top:11px;line-height:1.7}
   .work-shot .samp{color:var(--mid);text-transform:none;letter-spacing:0;font-size:12.5px}
 
-  .hats{margin-top:44px;padding-top:30px;border-top:1px solid var(--rule)}
+  .hats{margin-top:28px;padding-top:22px;border-top:1px solid var(--rule)}
   .hats-lead{color:var(--signal);margin-bottom:16px}
   .hatlist{
     list-style:none;margin:0;padding:0;
@@ -206,9 +211,9 @@
   .hats-note{margin:22px 0 0;color:var(--mid);max-width:78ch;font-size:15.5px}
 
   /* ---------- straight answers ---------- */
-  .qa{padding:82px 0 0}
+  .qa{padding:46px 0 0}
   .qa .mono{color:var(--faint)}
-  .q{border-top:1px solid var(--rule);padding:32px 0;display:grid;
+  .q{border-top:1px solid var(--rule);padding:20px 0;display:grid;
      grid-template-columns:152px 1fr;gap:36px}
   @media(max-width:760px){.q{grid-template-columns:1fr;gap:12px}}
   .q .lab{color:var(--signal)}
@@ -216,17 +221,22 @@
   .q p{margin:0;color:var(--mid);max-width:62ch}
 
   /* headshot at the honest-read stop */
-  .me{display:flex;gap:22px;align-items:flex-start;margin-top:17px}
+  /* headshot sits to the RIGHT of the copy, outside it, so it can breathe */
+  .me{display:grid;grid-template-columns:1fr 210px;gap:38px;align-items:start;margin-top:17px}
   .me img{
-    width:112px;height:112px;flex:0 0 112px;object-fit:cover;
-    border:1px solid var(--rule);
+    width:210px;height:250px;object-fit:cover;
+    border:1px solid var(--rule);display:block;
   }
   .me p{margin:0;max-width:52ch;color:var(--mid)}
   .me p b{color:var(--ink);font-weight:600}
   .me-sig{color:var(--faint);margin-top:12px !important}
+  @media(max-width:900px){
+    .me{grid-template-columns:1fr 150px;gap:24px}
+    .me img{width:150px;height:180px}
+  }
   @media(max-width:620px){
-    .me{gap:16px}
-    .me img{width:78px;height:78px;flex:0 0 78px}
+    .me{grid-template-columns:1fr;gap:18px}
+    .me img{width:130px;height:155px}
   }
 
   .orelse{margin:26px 0 0;color:var(--mid);max-width:52ch}
@@ -234,11 +244,11 @@
   .orelse a:hover{border-bottom-color:var(--signal)}
 
   /* ---------- close ---------- */
-  .close{padding:92px 0 100px;border-top:1px solid var(--rule);margin-top:78px}
+  .close{padding:50px 0 56px;border-top:1px solid var(--rule);margin-top:42px}
   .close h2{margin:0;font-size:clamp(34px,5.4vw,64px);line-height:1;
             letter-spacing:-0.04em;font-weight:680;max-width:16ch}
   .close p{color:var(--mid);margin:22px 0 0;max-width:46ch}
-  .foot{border-top:1px solid var(--rule);padding:26px 0 60px;display:flex;
+  .foot{border-top:1px solid var(--rule);padding:20px 0 34px;display:flex;
         justify-content:space-between;gap:20px;flex-wrap:wrap;color:var(--faint)}
   .foot a{color:var(--faint);text-decoration:none}
   .foot a:hover{color:var(--ink)}
@@ -316,7 +326,6 @@
       <div class="mono" style="color:var(--faint)">The first forty-five minutes</div>
       <h2>An honest read, before either of us commits.</h2>
       <div class="me">
-        <img src="/mo.jpg" srcset="/mo.jpg 1x, /mo-2x.jpg 2x" alt="Mo Ramchandani" width="112" height="112" loading="lazy">
         <div>
           <p>
             We talk it through and I tell you what your idea actually requires. Sometimes that's me.
@@ -325,6 +334,7 @@
           </p>
           <p class="me-sig mono">Mo Ramchandani, the person you would be talking to</p>
         </div>
+        <img src="/mo.jpg" srcset="/mo.jpg 1x, /mo-2x.jpg 2x" alt="Mo Ramchandani" width="210" height="250" loading="lazy">
       </div>
       <div class="aside">
         <span class="mono">From the bench</span>
@@ -455,7 +465,7 @@
           </p>
         </div>
         <figure class="work-shot">
-          <img src="/work-strikr.jpg" alt="The training app on a phone" loading="lazy" width="1200" height="1043">
+          <img src="/work-strikr.jpg" alt="The training app on a phone" loading="lazy" width="1000" height="1750">
           <figcaption class="mono">iOS and Android, consumer subscription</figcaption>
         </figure>
       </div>
