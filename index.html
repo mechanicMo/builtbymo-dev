@@ -68,7 +68,7 @@
   .top .wrap{display:flex;align-items:center;justify-content:space-between;height:66px}
   .brand{display:flex;align-items:center;gap:11px;font-weight:600;letter-spacing:-0.02em;font-size:17px}
   .brand i{width:11px;height:11px;background:var(--signal);display:block}
-  .nav{display:flex;gap:30px}
+  .nav{display:flex;gap:30px;align-items:center}
   .nav a{color:var(--mid);text-decoration:none}
   .nav a:hover{color:var(--ink)}
   @media(max-width:700px){.nav a{display:none}}
@@ -79,7 +79,9 @@
     color:var(--faint);display:inline-flex;align-items:center;line-height:0;
   }
   .theme:hover{color:var(--signal)}
-  .theme svg{display:block}
+  /* uppercase nav text has no descenders, so a box-centred icon reads low.
+     1px optical lift aligns it to the perceived text center. */
+  .theme svg{display:block;width:15px;height:15px;position:relative;top:-1px}
   .theme .sun{display:none}
   :root[data-theme="dark"] .theme .sun{display:block}
   :root[data-theme="dark"] .theme .moon{display:none}
