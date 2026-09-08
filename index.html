@@ -165,9 +165,45 @@
   @media(max-width:820px){.cols{grid-template-columns:1fr;gap:26px}}
   .cols p{margin:0 0 15px;color:var(--mid);max-width:52ch}
   .cols em{font-style:normal;color:var(--ink);font-weight:600}
-  .marks{display:flex;gap:56px;margin-top:44px;flex-wrap:wrap}
-  .mark .v{font-size:33px;font-weight:660;letter-spacing:-0.03em;display:block;line-height:1}
-  .mark .w{color:var(--faint);margin-top:8px;display:block}
+  /* ---------- prior builds ---------- */
+  .workhead{display:flex;align-items:baseline;justify-content:space-between;gap:26px;flex-wrap:wrap}
+  .workhead .mono{color:var(--faint)}
+  .tabs{display:flex;gap:8px}
+  .tab{
+    font:inherit;font-size:12.5px;letter-spacing:.02em;
+    background:none;border:1px solid var(--rule);color:var(--mid);
+    padding:8px 15px;cursor:pointer;
+  }
+  .tab:hover{color:var(--ink);border-color:var(--mid)}
+  .tab.is-on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .work[hidden]{display:none}
+  .work-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:start;margin-top:30px}
+  @media(max-width:900px){.work-grid{grid-template-columns:1fr;gap:32px}}
+  .work-story h2{
+    margin:0 0 20px;font-size:clamp(28px,3.9vw,46px);line-height:1.04;
+    letter-spacing:-0.035em;font-weight:660;max-width:18ch;
+  }
+  .work-story p{margin:0 0 15px;color:var(--mid);max-width:52ch}
+  .work-story em{font-style:normal;color:var(--ink);font-weight:600}
+  .work-shot{margin:0}
+  .work-shot img{
+    width:100%;height:auto;display:block;
+    border:1px solid var(--rule);background:var(--paper);
+  }
+  .work-shot figcaption{color:var(--faint);margin-top:11px;line-height:1.7}
+  .work-shot .samp{color:var(--mid);text-transform:none;letter-spacing:0;font-size:12.5px}
+
+  .hats{margin-top:44px;padding-top:30px;border-top:1px solid var(--rule)}
+  .hats-lead{color:var(--signal);margin-bottom:16px}
+  .hatlist{
+    list-style:none;margin:0;padding:0;
+    display:flex;flex-wrap:wrap;gap:9px;
+  }
+  .hatlist li{
+    border:1px solid var(--rule);padding:7px 13px;
+    font-size:14px;color:var(--ink);background:var(--paper);
+  }
+  .hats-note{margin:22px 0 0;color:var(--mid);max-width:78ch;font-size:15.5px}
 
   /* ---------- straight answers ---------- */
   .qa{padding:82px 0 0}
@@ -178,6 +214,24 @@
   .q .lab{color:var(--signal)}
   .q h3{margin:0 0 12px;font-size:21px;letter-spacing:-0.022em;font-weight:640}
   .q p{margin:0;color:var(--mid);max-width:62ch}
+
+  /* headshot at the honest-read stop */
+  .me{display:flex;gap:22px;align-items:flex-start;margin-top:17px}
+  .me img{
+    width:112px;height:112px;flex:0 0 112px;object-fit:cover;
+    border:1px solid var(--rule);
+  }
+  .me p{margin:0;max-width:52ch;color:var(--mid)}
+  .me p b{color:var(--ink);font-weight:600}
+  .me-sig{color:var(--faint);margin-top:12px !important}
+  @media(max-width:620px){
+    .me{gap:16px}
+    .me img{width:78px;height:78px;flex:0 0 78px}
+  }
+
+  .orelse{margin:26px 0 0;color:var(--mid);max-width:52ch}
+  .orelse a{color:var(--signal);text-decoration:none;border-bottom:1px solid var(--rule)}
+  .orelse a:hover{border-bottom-color:var(--signal)}
 
   /* ---------- close ---------- */
   .close{padding:92px 0 100px;border-top:1px solid var(--rule);margin-top:78px}
@@ -200,9 +254,10 @@
     <div class="brand"><i></i>Built by Mo</div>
     <nav class="nav mono">
       <a href="#route">The route</a>
-      <a href="#build">A build</a>
+      <a href="#build">Prior builds</a>
       <a href="#answers">Straight answers</a>
-      <a href="#book">Book</a>
+      <a href="https://manuramchandani.com" target="_blank" rel="noopener">Portfolio</a>
+      <a href="#book">Contact</a>
       <button class="theme" id="themeToggle" type="button" aria-label="Switch between light and dark" title="Switch theme">
         <svg class="moon" width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
           <path d="M14 9.7A6.2 6.2 0 0 1 6.3 2 6.2 6.2 0 1 0 14 9.7Z" fill="currentColor"/>
@@ -260,11 +315,17 @@
     <div class="content">
       <div class="mono" style="color:var(--faint)">The first forty-five minutes</div>
       <h2>An honest read, before either of us commits.</h2>
-      <p>
-        We talk it through and I tell you what your idea actually requires. Sometimes that's me.
-        Sometimes it's a team of four, or a tool that already exists, or nothing at all yet.
-        <b>You'll get the truth even when it costs me the work.</b>
-      </p>
+      <div class="me">
+        <img src="/mo.jpg" srcset="/mo.jpg 1x, /mo@2x.jpg 2x" alt="Mo Ramchandani" width="112" height="112" loading="lazy">
+        <div>
+          <p>
+            We talk it through and I tell you what your idea actually requires. Sometimes that's me.
+            Sometimes it's a team of four, or a tool that already exists, or nothing at all yet.
+            <b>You'll get the truth even when it costs me the work.</b>
+          </p>
+          <p class="me-sig mono">Mo Ramchandani, the person you would be talking to</p>
+        </div>
+      </div>
       <div class="aside">
         <span class="mono">From the bench</span>
         <p>I've talked people out of hiring me. It's usually the fastest way to find out whether we should be working together.</p>
@@ -327,36 +388,92 @@
 
 <section class="band" id="build">
   <div class="wrap">
-    <div class="mono">One build</div>
-    <h2>She had already built half of it herself.</h2>
-    <div class="cols">
-      <div>
-        <p>
-          She taught herself enough to get a first version working on nights and weekends, and it
-          worked. People were using it. <em>She did not need rescuing.</em>
-        </p>
-        <p>
-          What she'd run out of was certainty, not ability. She hired me to be the person who says
-          <em>that one, and here's why the rest can wait</em>, and then to build it properly so it
-          wouldn't need rebuilding in a year.
-        </p>
-      </div>
-      <div>
-        <p>
-          A few months later it was live with real users on it. She still ships to it herself,
-          because it was hers the whole time.
-        </p>
-        <p>
-          Agency-scale work, several connected apps and the systems under them, without the
-          agency, and without a project manager between her and the person building it.
-        </p>
+    <div class="workhead">
+      <div class="mono">Prior builds</div>
+      <div class="tabs" role="tablist" aria-label="Prior builds">
+        <button class="tab is-on" role="tab" aria-selected="true" data-work="gc">Home health platform</button>
+        <button class="tab" role="tab" aria-selected="false" data-work="sk">Training app</button>
       </div>
     </div>
-    <div class="marks">
-      <div class="mark"><span class="v">One</span><span class="w mono">person, whole product</span></div>
-      <div class="mark"><span class="v">Hers</span><span class="w mono">from day one</span></div>
-      <div class="mark"><span class="v">Zero</span><span class="w mono">rebuilds since</span></div>
-    </div>
+
+    <article class="work is-on" id="work-gc">
+      <div class="work-grid">
+        <div class="work-story">
+          <h2>She had already built half of it herself.</h2>
+          <p>
+            She taught herself enough to get a first version working on nights and weekends, and it
+            worked. People were using it. <em>She did not need rescuing.</em>
+          </p>
+          <p>
+            What she'd run out of was certainty, not ability. She hired me to be the person who says
+            <em>that one, and here's why the rest can wait</em>, and then to build it properly so it
+            wouldn't need rebuilding in a year.
+          </p>
+          <p>
+            A few months later it was live with real users on it, across a web platform and a
+            mobile app for staff in the field. She still ships to it herself, because it was hers
+            the whole time.
+          </p>
+        </div>
+        <figure class="work-shot">
+          <img src="/work-goodcare.jpg" alt="The home health platform in use" loading="lazy" width="1600" height="816">
+          <figcaption class="mono">Web platform and field mobile app, healthcare<br><span class="samp">Sample data. Real patient information never appears outside the platform.</span></figcaption>
+        </figure>
+      </div>
+      <div class="hats">
+        <div class="hats-lead mono">One person wore all of these</div>
+        <ul class="hatlist">
+          <li>Product</li><li>Design</li><li>Frontend</li><li>Backend</li><li>Database</li>
+          <li>DevOps</li><li>Release engineering</li><li>Security</li><li>Compliance</li>
+          <li>QA</li><li>Analytics</li><li>Data migration</li><li>AI systems</li>
+          <li>Client communication</li>
+        </ul>
+        <p class="hats-note">
+          HIPAA-configured throughout, with signed business associate agreements, row-level data
+          isolation between tenants, and an audit trail. Insurance claims filed electronically to a
+          national clearinghouse. Automated voice and SMS built on a carrier-registered messaging
+          program. Existing client records migrated off the incumbent system.
+        </p>
+      </div>
+    </article>
+
+    <article class="work" id="work-sk" hidden>
+      <div class="work-grid">
+        <div class="work-story">
+          <h2>He had an audience and no product to sell them.</h2>
+          <p>
+            A coach with a following and a clear idea of the training app he wanted, and no way to
+            get it into people's hands. <em>The idea was never the bottleneck.</em>
+          </p>
+          <p>
+            I built it and shipped it to both stores: the app itself, the subscriptions behind it,
+            and the ad tracking that tells him which campaigns actually pay for themselves.
+          </p>
+          <p>
+            When Google's review policy stranded the release, I moved it to a new publisher account
+            and got it out. That is the part nobody quotes for and everybody needs.
+          </p>
+        </div>
+        <figure class="work-shot">
+          <img src="/work-strikr.jpg" alt="The training app on a phone" loading="lazy" width="1200" height="1043">
+          <figcaption class="mono">iOS and Android, consumer subscription</figcaption>
+        </figure>
+      </div>
+      <div class="hats">
+        <div class="hats-lead mono">Every hat but the brand</div>
+        <ul class="hatlist">
+          <li>Product</li><li>Frontend</li><li>Backend</li><li>Database</li><li>DevOps</li>
+          <li>Release engineering</li><li>Security</li><li>QA</li><li>Payments</li>
+          <li>Ads and attribution</li><li>Analytics</li><li>Client communication</li>
+        </ul>
+        <p class="hats-note">
+          Subscriptions and free trials wired end to end, including the paywall and trial-abuse
+          prevention. Sign in with Apple and Google. Ad attribution across two networks, connected
+          to real purchases so spend can be judged. Submitted, reviewed and released on both
+          stores.
+        </p>
+      </div>
+    </article>
   </div>
 </section>
 
@@ -407,9 +524,14 @@
     including "you don't need me," if that's the truth.
   </p>
   <div class="cta">
-    <a class="btn" href="https://cal.com/builtbymo/45min" target="_blank" rel="noopener"><i></i>Book the call</a>
+    <a class="btn" href="https://cal.com/builtbymo/45min" target="_blank" rel="noopener"><i></i>Schedule forty-five minutes</a>
     <span class="note">No deck, no follow-up sequence, no invented deadline.</span>
   </div>
+  <p class="orelse">
+    Not ready for a call? Just write to me at
+    <a href="mailto:hello@builtbymo.dev">hello@builtbymo.dev</a>. A real question gets a real
+    answer, and there is no sequence waiting on the other side of it.
+  </p>
 </section>
 
 <div class="wrap">
@@ -427,6 +549,23 @@
     var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
     root.setAttribute('data-theme', next);
     try{ localStorage.setItem('bbm-theme', next); }catch(e){}
+  });
+})();
+(function(){
+  var tabs = [].slice.call(document.querySelectorAll('.tab'));
+  if(!tabs.length) return;
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){
+      var id = t.getAttribute('data-work');
+      tabs.forEach(function(o){
+        var on = o === t;
+        o.classList.toggle('is-on', on);
+        o.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      [].slice.call(document.querySelectorAll('.work')).forEach(function(w){
+        w.hidden = (w.id !== 'work-' + id);
+      });
+    });
   });
 })();
 </script>
